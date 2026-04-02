@@ -14,11 +14,11 @@ onMounted(() => window.addEventListener('scroll', onScroll))
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const links = computed(() => [
-  { label: t.value.nav.about, href: '#a-propos' },
-  { label: t.value.nav.projects, href: '#projets' },
-  { label: t.value.nav.skills, href: '#competences' },
-  { label: t.value.nav.path, href: '#parcours' },
-  { label: t.value.nav.contact, href: '#contact' },
+  { label: t.value.nav.about, href: '/#a-propos' },
+  { label: t.value.nav.projects, href: '/#projets' },
+  { label: t.value.nav.skills, href: '/#competences' },
+  { label: t.value.nav.path, href: '/#parcours' },
+  { label: t.value.nav.contact, href: '/#contact' },
 ])
 </script>
 
@@ -30,17 +30,17 @@ const links = computed(() => [
       : 'py-5 bg-transparent'"
   >
     <div class="max-w-[1536px] mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
-      <a href="#" class="font-heading font-bold text-xl tracking-tight text-on-surface hover:text-primary transition-colors">
+      <router-link to="/" class="font-heading font-bold text-xl tracking-tight text-on-surface hover:text-primary transition-colors">
         John<span class="text-primary">.</span>
-      </a>
+      </router-link>
 
       <!-- Desktop links -->
       <div class="hidden md:flex items-center gap-8">
-        <a
+        <router-link
           v-for="link in links" :key="link.label"
-          :href="link.href"
+          :to="link.href"
           class="text-sm text-on-muted hover:text-on-surface transition-colors duration-300 font-medium"
-        >{{ link.label }}</a>
+        >{{ link.label }}</router-link>
 
         <div class="flex items-center gap-2">
           <!-- Language toggle -->
@@ -63,9 +63,9 @@ const links = computed(() => [
           </button>
         </div>
 
-        <a href="#contact" class="text-sm font-semibold bg-primary hover:bg-primary/80 text-white px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+        <router-link to="/#contact" class="text-sm font-semibold bg-primary hover:bg-primary/80 text-white px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
           {{ t.nav.cta }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Mobile: lang + theme + hamburger -->
@@ -90,12 +90,12 @@ const links = computed(() => [
       v-if="menuOpen"
       class="md:hidden absolute top-full left-0 w-full bg-surface border-b border-surface py-6 px-6 flex flex-col gap-4 animate-fadeIn"
     >
-      <a
+      <router-link
         v-for="link in links" :key="link.label"
-        :href="link.href"
+        :to="link.href"
         @click="menuOpen = false"
         class="text-on-muted hover:text-on-surface text-lg font-medium py-2"
-      >{{ link.label }}</a>
+      >{{ link.label }}</router-link>
     </div>
   </nav>
 </template>

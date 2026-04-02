@@ -46,6 +46,7 @@ const translations: Record<string, any> = {
       description:
         'Des projets réels réalisés en entreprise avec une exigence de qualité et de performance.',
       status: 'En production',
+      seeAll: 'Voir tous mes projets',
       items: {
         ktalent: {
           category: 'Plateforme de Recrutement',
@@ -136,6 +137,7 @@ const translations: Record<string, any> = {
       country: 'Bénin',
       madeWith: 'Conçu avec ❤️ et Vue.js',
     },
+    Loading: 'Chargement...',
   },
   en: {
     nav: {
@@ -180,6 +182,7 @@ const translations: Record<string, any> = {
       description:
         'Real projects carried out in business with a high standard of quality and performance.',
       status: 'Live',
+      seeAll: 'View all my projects',
       items: {
         ktalent: {
           category: 'Recruitment Platform',
@@ -269,6 +272,7 @@ const translations: Record<string, any> = {
       country: 'Benin',
       madeWith: 'Designed with ❤️ and Vue.js',
     },
+    Loading: 'Loading...',
   },
 }
 

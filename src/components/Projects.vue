@@ -1,11 +1,25 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useI18n } from '../composables/useI18n'
+import { useLoader } from '../composables/useLoader'
 
 const sectionRef = ref<HTMLElement | null>(null)
 useScrollReveal(sectionRef)
 const { t } = useI18n()
+const router = useRouter()
+const { showLoader, hideLoader } = useLoader()
+
+const navigateToAllProjects = () => {
+  showLoader()
+  setTimeout(() => {
+    router.push('/projects').then(() => {
+      // Add a slight delay before removing the loader to let the router transition finish
+      setTimeout(hideLoader, 300)
+    })
+  }, 1200)
+}
 
 const projects = computed(() => [
   {
@@ -70,6 +84,17 @@ const projects = computed(() => [
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Button Voir tous mes projets -->
+      <div class="mt-16 flex justify-center" data-reveal="up" data-delay="3">
+        <button
+          @click="navigateToAllProjects"
+          class="group btn-outline-theme border font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center gap-3"
+        >
+          <span>{{ t.projects.seeAll }}</span>
+          <span class="group-hover:translate-x-1 transition-transform">→</span>
+        </button>
       </div>
     </div>
   </section>
