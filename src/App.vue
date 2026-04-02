@@ -6,14 +6,14 @@ import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Experience from './components/Experience.vue'
 import Contact from './components/Contact.vue'
-import Cursor from './components/Cursor.vue'
+import Footer from './components/Footer.vue'
+import WhatsAppFab from './components/WhatsAppFab.vue'
 </script>
 
 <template>
   <div class="min-h-screen bg-background selection:bg-primary selection:text-white">
-    <Cursor />
     <Navigation />
-    
+
     <main>
       <Hero />
       <About />
@@ -22,5 +22,8 @@ import Cursor from './components/Cursor.vue'
       <Experience />
       <Contact />
     </main>
+
+    <Footer />
+    <WhatsAppFab />
   </div>
 </template>

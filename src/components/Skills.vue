@@ -96,7 +96,7 @@ onMounted(() => {
       <!-- MARQUEE ROW 1: Frontend & UI (scrolls right) -->
       <div data-reveal="fade" data-delay="1" class="mb-6 overflow-hidden">
         <div class="flex whitespace-nowrap" style="animation: marquee 40s linear infinite;">
-          <div v-for="n in 4" :key="'r1-' + n" class="flex gap-8 pr-8">
+          <div v-for="n in 4" :key="'r1-' + n" class="flex shrink-0 gap-8 pr-8">
             <div
               v-for="tech in techsRow1"
               :key="tech.name + n"
@@ -115,7 +115,7 @@ onMounted(() => {
       <!-- MARQUEE ROW 2: Backend & Tools (scrolls left) -->
       <div data-reveal="fade" data-delay="2" class="mb-16 overflow-hidden">
         <div class="flex whitespace-nowrap" style="animation: marquee-reverse 45s linear infinite;">
-          <div v-for="n in 4" :key="'r2-' + n" class="flex gap-8 pr-8">
+          <div v-for="n in 4" :key="'r2-' + n" class="flex shrink-0 gap-8 pr-8">
             <div
               v-for="tech in techsRow2"
               :key="tech.name + n"

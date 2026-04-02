@@ -31,7 +31,7 @@ const links = computed(() => [
   >
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
       <a href="#" class="font-heading font-bold text-xl tracking-tight text-on-surface hover:text-primary transition-colors">
-        JB<span class="text-primary">.</span>
+        John<span class="text-primary">.</span>
       </a>
 
       <!-- Desktop links -->

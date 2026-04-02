@@ -12,7 +12,7 @@ const projects = computed(() => [
     title: 'K-Talent',
     category: t.value.projects.items.ktalent.category,
     description: t.value.projects.items.ktalent.description,
-    tags: ['Vue.js', 'Pinia', 'API REST'],
+    tags: ['Vue.js', 'Pinia', 'FastAPI', 'PostgreSQL', 'Docker'],
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop',
     featured: true,
   },
@@ -38,12 +38,12 @@ const projects = computed(() => [
 <template>
   <section ref="sectionRef" id="projets" class="py-24 px-6 bg-surface">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div class="flex flex-col gap-6 mb-16">
         <div data-reveal="up">
           <span class="text-primary text-sm font-semibold uppercase tracking-wider">{{ t.projects.title }}</span>
           <h2 class="font-heading font-bold text-4xl md:text-5xl mt-2 text-on-surface">{{ t.projects.subtitle }}</h2>
         </div>
-        <p data-reveal="up" data-delay="2" class="text-on-muted max-w-sm text-sm leading-relaxed">{{ t.projects.description }}</p>
+        <p data-reveal="up" data-delay="2" class="text-on-muted max-w-2xl text-base leading-relaxed">{{ t.projects.description }}</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,7 +57,7 @@ const projects = computed(() => [
           <div class="aspect-video overflow-hidden relative">
             <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <span v-if="project.featured" class="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            <span v-if="project.featured" class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
               {{ t.projects.status }}
             </span>
           </div>
