@@ -37,10 +37,10 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <section ref="sectionRef" id="contact" class="py-24 px-6 bg-surface-2 relative overflow-hidden">
+  <section ref="sectionRef" id="contact" class="py-24 px-6 lg:px-12 bg-surface-2 relative overflow-hidden">
     <div class="absolute inset-0 contact-gradient pointer-events-none"></div>
 
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-[1536px] w-full mx-auto relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <!-- Left: Text content -->
         <div class="flex flex-col">

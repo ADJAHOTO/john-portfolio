@@ -29,7 +29,7 @@ const links = computed(() => [
       ? 'py-3 nav-bg backdrop-blur-xl shadow-lg shadow-black/10 border-b border-surface'
       : 'py-5 bg-transparent'"
   >
-    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+    <div class="max-w-[1536px] mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
       <a href="#" class="font-heading font-bold text-xl tracking-tight text-on-surface hover:text-primary transition-colors">
         John<span class="text-primary">.</span>
       </a>

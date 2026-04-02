@@ -9,8 +9,8 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <section ref="sectionRef" id="a-propos" class="py-24 px-6 bg-surface-2 overflow-hidden">
-    <div class="max-w-5xl mx-auto text-center">
+  <section ref="sectionRef" id="a-propos" class="py-24 px-6 lg:px-12 bg-surface-2 overflow-hidden">
+    <div class="max-w-6xl mx-auto w-full text-center">
       <div data-reveal="up">
         <span class="text-primary text-sm font-semibold uppercase tracking-wider">{{ t.about.title }}</span>
         <h2 class="font-heading font-bold text-4xl md:text-5xl mt-2 mb-10 text-on-surface">{{ t.about.subtitle }}</h2>

@@ -36,8 +36,8 @@ const projects = computed(() => [
 </script>
 
 <template>
-  <section ref="sectionRef" id="projets" class="py-24 px-6 bg-surface">
-    <div class="max-w-6xl mx-auto">
+  <section ref="sectionRef" id="projets" class="py-24 px-6 lg:px-12 bg-surface">
+    <div class="max-w-[1536px] mx-auto w-full">
       <div class="flex flex-col gap-6 mb-16">
         <div data-reveal="up">
           <span class="text-primary text-sm font-semibold uppercase tracking-wider">{{ t.projects.title }}</span>

@@ -84,8 +84,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="sectionRef" id="competences" class="py-24 px-6 bg-surface-2 overflow-hidden">
-    <div class="max-w-6xl mx-auto">
+  <section ref="sectionRef" id="competences" class="py-24 px-6 lg:px-12 bg-surface-2 overflow-hidden">
+    <div class="max-w-[1536px] mx-auto w-full">
       <!-- Header -->
       <div class="mb-16" data-reveal="up">
         <span class="text-primary text-sm font-semibold uppercase tracking-wider">{{ t.skills.title }}</span>

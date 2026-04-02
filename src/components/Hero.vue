@@ -9,10 +9,10 @@ const { t } = useI18n()
     <div class="absolute inset-0 hero-gradient-1 pointer-events-none"></div>
     <div class="absolute inset-0 hero-gradient-2 pointer-events-none"></div>
 
-    <div class="max-w-6xl mx-auto px-6 w-full">
+    <div class="max-w-[1536px] mx-auto px-6 w-full lg:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
         <!-- Text content (3/5) -->
-        <div class="lg:col-span-3 order-2 lg:order-1">
+        <div class="lg:col-span-3">
           <!-- Status badge -->
           <div
             class="animate-fadeInUp delay-1 inline-flex items-center gap-2 badge-bg border rounded-full px-4 py-1.5 mb-8"
@@ -80,8 +80,8 @@ const { t } = useI18n()
         </div>
 
         <!-- Photo (2/5) with animations -->
-        <div class="lg:col-span-2 order-1 lg:order-2 flex justify-center animate-scaleIn delay-2">
-          <div class="relative animate-float">
+        <div class="lg:col-span-2 flex justify-center animate-scaleIn delay-2">
+          <div class="relative animate-float mt-8 lg:mt-0">
             <!-- Glow ring behind photo -->
             <div
               class="absolute -inset-4 rounded-3xl opacity-50"
