@@ -7,10 +7,44 @@ const { isDark, toggle } = useTheme()
 const { lang, t, toggleLang } = useI18n()
 const scrolled = ref(false)
 const menuOpen = ref(false)
+const activeSection = ref('')
 
-const onScroll = () => { scrolled.value = window.scrollY > 50 }
+const onScroll = () => { 
+  scrolled.value = window.scrollY > 50
 
-onMounted(() => window.addEventListener('scroll', onScroll))
+  const sections = ['a-propos', 'projets', 'competences', 'parcours', 'contact']
+  let current = ''
+
+  for (const id of sections) {
+    const el = document.getElementById(id)
+    if (el) {
+      const rect = el.getBoundingClientRect()
+      if (rect.top <= window.innerHeight / 2.5) {
+        current = id
+      }
+    }
+  }
+
+  // Handle bottom of page
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+    const contactEl = document.getElementById('contact')
+    if (contactEl) {
+      current = 'contact'
+    }
+  }
+
+  // Handle very top of page
+  if (window.scrollY < 100) {
+    current = ''
+  }
+
+  activeSection.value = current
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+  setTimeout(onScroll, 100) // Initial check
+})
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const links = computed(() => [
@@ -39,8 +73,19 @@ const links = computed(() => [
         <router-link
           v-for="link in links" :key="link.label"
           :to="link.href"
-          class="text-sm text-on-muted hover:text-on-surface transition-colors duration-300 font-medium"
-        >{{ link.label }}</router-link>
+          class="text-sm transition-colors duration-300 font-medium relative"
+          :class="[
+            activeSection === link.href.split('#')[1]
+              ? 'text-primary'
+              : 'text-on-muted hover:text-on-surface'
+          ]"
+        >
+          {{ link.label }}
+          <span
+            v-if="activeSection === link.href.split('#')[1]"
+            class="absolute -bottom-1 left-0 w-full h-[2px] bg-primary rounded-full"
+          ></span>
+        </router-link>
 
         <div class="flex items-center gap-2">
           <!-- Language toggle -->
@@ -94,7 +139,12 @@ const links = computed(() => [
         v-for="link in links" :key="link.label"
         :to="link.href"
         @click="menuOpen = false"
-        class="text-on-muted hover:text-on-surface text-lg font-medium py-2"
+        class="text-lg font-medium py-2 transition-colors duration-300"
+        :class="[
+          activeSection === link.href.split('#')[1]
+            ? 'text-primary'
+            : 'text-on-muted hover:text-on-surface'
+        ]"
       >{{ link.label }}</router-link>
     </div>
   </nav>
