@@ -21,7 +21,7 @@ const { t } = useI18n()
           v-for="(exp, i) in t.experience.items"
           :key="i"
           data-reveal="left"
-          :data-delay="i + 1"
+          :data-delay="Number(i) + 1"
           class="group grid grid-cols-1 md:grid-cols-[140px,1fr] gap-4 md:gap-8 p-6 rounded-xl hover:bg-primary/[0.03] transition-all duration-300 border border-transparent hover:border-surface"
         >
           <div class="flex items-start gap-3">

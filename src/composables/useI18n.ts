@@ -22,9 +22,10 @@ const translations: Record<string, any> = {
       contactMe: 'Me contacter',
       downloadCV: 'Télécharger mon CV',
       stats: {
-        techs: 'Technologies',
-        projects: 'Projets Pro',
-        degree: 'Génie Logiciel',
+        techs: 'Technologies maîtrisées',
+        projects: 'Projets en entreprise',
+        degree: 'Ans de formation',
+        energy: 'Énergie créative',
       },
       stack: 'Stack',
     },
@@ -51,17 +52,46 @@ const translations: Record<string, any> = {
         ktalent: {
           category: 'Plateforme de Recrutement',
           description:
-            'Application de recrutement développée pour Kapital Human & Conseils. Frontend Vue.js, intégration API REST, formulaires complexes et gestion de données.',
+            'Application de recrutement développée pour Kapital Human & Conseils. Frontend Vue.js, Backend FastAPI, Pinia, intégration API REST, formulaires complexes et gestion de données.',
+        },
+        osons: {
+          category: 'Plateforme de reseaux sociaux',
+          description:
+            "Application fullstack complète developpé en Vue.js et FastAPI, Pinia, et Gestion des API avec publication, creation d'evenements  gestion des evenements, et gestion des rôles des utilisateurs.",
+        },
+        linguaia: {
+          category: 'Plateforme d\'apprentissage de l\'anglais',
+          description:
+            "Plateforme interactive d'apprentissage de l'anglais propulsée par l'intelligence artificielle avec feedback instantané.",
         },
         taskflow: {
           category: 'Gestion de Tâches',
           description:
             'Application fullstack complète avec gestion de tâches, historique et système multi-utilisateurs.',
         },
-        linguaia: {
-          category: 'Éducation & IA',
-          description:
-            "Plateforme interactive d'apprentissage de l'anglais propulsée par l'intelligence artificielle avec feedback instantané.",
+        eshopify: {
+          category: 'E-Commerce',
+          description: 'Boutique en ligne moderne avec paiement Stripe et panier persistant.',
+        },
+        cryptotracker: {
+          category: 'Finance',
+          description: 'Application de suivi de portefeuilles de cryptomonnaies.',
+        },
+        traveldiary: {
+          category: 'Blog',
+          description: 'Réseau social pour voyageurs avec carte interactive.',
+        },
+        fitapp: {
+          category: 'Santé & Sport',
+          description: 'Application de suivi de fitness et générateur de routines sur-mesure.',
+        },
+        agencysite: {
+          category: 'Site Vitrine',
+          description: 'Site internet de haute performance pour une agence digitale créative.',
+        },
+        smarthome: {
+          category: 'IoT / Sécurité',
+          description: 'Dashboard de contrôle pour appareils intelligents avec système d\'authentification.',
         },
       },
     },
@@ -158,9 +188,10 @@ const translations: Record<string, any> = {
       contactMe: 'Contact Me',
       downloadCV: 'Download CV',
       stats: {
-        techs: 'Technologies',
-        projects: 'Pro Projects',
-        degree: 'Software Engineering',
+        techs: 'Mastered Technologies',
+        projects: 'Professional Projects',
+        degree: 'Years of Training',
+        energy: 'Creative Energy',
       },
       stack: 'Stack',
     },
@@ -194,9 +225,38 @@ const translations: Record<string, any> = {
           description:
             'Complete fullstack application with task management, history, and multi-user system.',
         },
+        osons: {
+          category: 'Social Media Platform',
+          description:
+            "Complete fullstack application developed in Vue.js and FastAPI, Pinia, and API management with posting, event creation, event management, and user role management.",
+        },
         linguaia: {
           category: 'Education & AI',
           description: 'Interactive AI-powered English learning platform with instant feedback.',
+        },
+        eshopify: {
+          category: 'E-Commerce',
+          description: 'Modern online store with Stripe payment and persistent cart.',
+        },
+        cryptotracker: {
+          category: 'Finance',
+          description: 'Cryptocurrency portfolio tracker application.',
+        },
+        traveldiary: {
+          category: 'Blog',
+          description: 'Social network for travelers with interactive map.',
+        },
+        fitapp: {
+          category: 'Health & Fitness',
+          description: 'Fitness tracking application and custom routine generator.',
+        },
+        agencysite: {
+          category: 'Showcase Website',
+          description: 'High-performance website for a creative digital agency.',
+        },
+        smarthome: {
+          category: 'IoT / Security',
+          description: 'Control dashboard for smart devices with authentication system.',
         },
       },
     },

@@ -1,21 +1,24 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { useI18n } from '../composables/useI18n'
+
 gsap.registerPlugin(ScrollTrigger)
 
-const sectionRef = ref(null)
-const statsRef = ref(null)
+const sectionRef = ref<HTMLElement | null>(null)
+const { t } = useI18n()
 
-const stats = [
-  { value: '15+', label: 'Technologies maîtrisées', color: 'text-rouge' },
-  { value: '05+', label: 'Projets en entreprise', color: 'text-white' },
-  { value: '04', label: 'Ans de formation', color: 'text-rouge' },
-  { value: '100%', label: 'Énergie créative', color: 'text-white' },
-]
+const stats = computed(() => [
+  { value: '15+', label: t.value.hero.stats.techs, color: 'text-rouge' },
+  { value: '05+', label: t.value.hero.stats.projects, color: 'text-white' },
+  { value: '04', label: t.value.hero.stats.degree, color: 'text-rouge' },
+  { value: '100%', label: t.value.hero.stats.energy, color: 'text-white' },
+])
 
 onMounted(() => {
+  if (!sectionRef.value) return
   const cards = sectionRef.value.querySelectorAll('.stat-card')
   gsap.from(cards, {
     scrollTrigger: { trigger: sectionRef.value, start: 'top 80%' },

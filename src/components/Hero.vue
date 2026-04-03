@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from '../composables/useI18n'
-import cvFile from '../assets/ADJAHOTO Jean Bénisse.pdf'
+import cvFile from '../assets/cv.pdf'
 
 const { t } = useI18n()
 </script>

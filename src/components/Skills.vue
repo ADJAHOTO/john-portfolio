@@ -67,7 +67,7 @@ const isBarVisible = ref(false)
 function onBarSection(el: HTMLElement) {
   const observer = new IntersectionObserver(
     (entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0]?.isIntersecting) {
         isBarVisible.value = true
         observer.disconnect()
       }
@@ -95,14 +95,14 @@ onMounted(() => {
 
       <!-- TECH LOGOS GRID -->
       <div data-reveal="up" data-delay="1" class="mb-16">
-        <div class="grid grid-cols-2 min-[420px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 sm:gap-4 md:gap-6">
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
           <div
             v-for="tech in [...techsRow1, ...techsRow2]"
             :key="tech.name"
-            class="tech-logo-card flex flex-col items-center justify-center gap-2 md:gap-3 border rounded-xl p-4 md:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 group bg-surface hover:border-primary/30"
+            class="tech-logo-card flex items-center gap-3 md:gap-4 border rounded-xl px-4 py-3 md:px-6 md:py-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 group bg-surface hover:border-primary/30"
           >
-            <img :src="tech.icon" :alt="tech.name" class="w-8 h-8 md:w-10 md:h-10 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300" />
-            <p class="text-[11px] sm:text-xs md:text-sm font-heading font-semibold text-on-surface text-center">{{ tech.name }}</p>
+            <img :src="tech.icon" :alt="tech.name" class="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300" />
+            <p class="text-xs md:text-sm font-heading font-semibold text-on-surface whitespace-nowrap">{{ tech.name }}</p>
           </div>
         </div>
       </div>
