@@ -15,9 +15,9 @@ const translations: Record<string, any> = {
     hero: {
       status: 'Disponible pour de nouveaux projets',
       greeting: 'Jean Bénisse',
-      name: 'Adjahoto',
+      name: 'ADJAHOTO',
       description:
-        'Développeur <span class="text-on-surface font-semibold">Fullstack Intermédiaire</span> spécialisé en Vue.js & FastAPI. Je conçois des applications webs performantes et élégantes.',
+        'Développeur <span class="text-on-surface font-semibold">Fullstack</span> spécialisé en Vue.js & FastAPI. Je conçois des applications webs performantes et élégantes.',
       viewProjects: 'Voir mes projets',
       contactMe: 'Me contacter',
       downloadCV: 'Télécharger mon CV',
