@@ -20,6 +20,7 @@ const allProjects = computed(() => {
       tags: ['Vue.js', 'Pinia', 'FastAPI', 'PostgreSQL', 'Docker'],
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop',
       featured: true,
+      link: '#',
     },
     {
       title: 'TaskFlow',
@@ -28,6 +29,7 @@ const allProjects = computed(() => {
       tags: ['Next.js', 'PostgreSQL', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop',
       featured: false,
+      link: '#',
     },
     {
       title: 'LinguaIA',
@@ -36,6 +38,7 @@ const allProjects = computed(() => {
       tags: ['Next.js', 'Firebase', 'OpenAI'],
       image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop',
       featured: false,
+      link: '#',
     },
     {
       title: 'E-Shopify',
@@ -44,6 +47,7 @@ const allProjects = computed(() => {
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
       featured: true,
+      link: '#',
     },
     {
       title: 'CryptoTracker',
@@ -52,6 +56,7 @@ const allProjects = computed(() => {
       tags: ['Vue.js', 'Tailwind', 'CoinGecko API'],
       image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=2069&auto=format&fit=crop',
       featured: false,
+      link: '#',
     },
     {
       title: 'TravelDiary',
@@ -60,6 +65,7 @@ const allProjects = computed(() => {
       tags: ['Nuxt 3', 'Supabase', 'Leaflet'],
       image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2035&auto=format&fit=crop',
       featured: false,
+      link: '#',
     },
     {
       title: 'FitApp',
@@ -68,6 +74,7 @@ const allProjects = computed(() => {
       tags: ['React Native', 'Firebase', 'Redux'],
       image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop',
       featured: false,
+      link: '#',
     },
     {
       title: 'AgencySite',
@@ -76,6 +83,7 @@ const allProjects = computed(() => {
       tags: ['Astro', 'Tailwind', 'GSAP'],
       image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop',
       featured: false,
+      link: '#',
     },
     {
       title: 'SmartHome Auth',
@@ -84,6 +92,7 @@ const allProjects = computed(() => {
       tags: ['Vue.js', 'FastAPI', 'WebSockets'],
       image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop',
       featured: true,
+      link: '#',
     }
   ]
 })
@@ -111,10 +120,12 @@ const allProjects = computed(() => {
 
       <!-- Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
+        <a
           v-for="(project, i) in allProjects"
           :key="project.title"
-          class="group card-bg border rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 animate-fadeInUp"
+          :href="project.link"
+          target="_blank"
+          class="group card-bg border rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 animate-fadeInUp block cursor-pointer"
           :style="{ animationDelay: `${(i % 3) * 100}ms` }"
         >
           <div class="aspect-video overflow-hidden relative">
@@ -128,11 +139,11 @@ const allProjects = computed(() => {
             <span class="text-primary text-xs font-semibold uppercase tracking-wider">{{ project.category }}</span>
             <h3 class="font-heading font-bold text-2xl text-on-surface mt-2 mb-3 group-hover:text-primary transition-colors duration-300">{{ project.title }}</h3>
             <p class="text-sm text-on-muted leading-relaxed mb-5">{{ project.description }}</p>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mt-auto">
               <span v-for="tag in project.tags" :key="tag" class="text-[11px] font-medium tag-bg px-3 py-1 rounded-full">{{ tag }}</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </main>

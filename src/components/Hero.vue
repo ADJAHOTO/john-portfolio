@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '../composables/useI18n'
+import cvFile from '../assets/ADJAHOTO Jean Bénisse.pdf'
+
 const { t } = useI18n()
 </script>
 
@@ -38,7 +40,7 @@ const { t } = useI18n()
             v-html="t.hero.description"
           ></p>
 
-          <!-- CTAs -->
+      <!-- CTAs -->
           <div class="animate-fadeInUp delay-4 flex flex-wrap gap-4">
             <a
               href="#projets"
@@ -53,8 +55,9 @@ const { t } = useI18n()
               {{ t.hero.contactMe }}
             </a>
             <a
-              href="/src/assets/ADJAHOTO Jean Bénisse.pdf"
-              download
+              :href="cvFile"
+              download="CV_ADJAHOTO_Jean_Benisse.pdf"
+              target="_blank"
               class="group border border-primary/20 hover:border-primary/50 text-primary px-8 py-3.5 rounded-full font-bold transition-all duration-300 flex items-center gap-2 hover:-translate-y-0.5"
             >
               <span class="text-lg group-hover:translate-y-0.5 transition-transform">⬇</span>
@@ -128,18 +131,4 @@ const { t } = useI18n()
     </div>
   </section>
 
-  <!-- Tech marquee banner -->
-  <div class="marquee-bar py-3 overflow-hidden">
-    <div class="flex whitespace-nowrap" style="animation: marquee 20s linear infinite">
-      <span
-        v-for="n in 8"
-        :key="n"
-        class="text-xs font-bold uppercase tracking-widest text-white/90 px-4"
-      >
-        Vue.js &nbsp;·&nbsp; React &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; Node.js &nbsp;·&nbsp;
-        PostgreSQL &nbsp;·&nbsp; React Native &nbsp;·&nbsp; Firebase &nbsp;·&nbsp; MongoDB
-        &nbsp;·&nbsp; Tailwind CSS &nbsp; ✦ &nbsp;
-      </span>
-    </div>
-  </div>
 </template>

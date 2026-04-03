@@ -93,40 +93,16 @@ onMounted(() => {
         <p class="text-on-muted mt-4 max-w-lg text-sm leading-relaxed">{{ t.skills.description }}</p>
       </div>
 
-      <!-- MARQUEE ROW 1: Frontend & UI (scrolls right) -->
-      <div data-reveal="fade" data-delay="1" class="mb-6 overflow-hidden">
-        <div class="flex whitespace-nowrap" style="animation: marquee 40s linear infinite;">
-          <div v-for="n in 4" :key="'r1-' + n" class="flex shrink-0 gap-8 pr-8">
-            <div
-              v-for="tech in techsRow1"
-              :key="tech.name + n"
-              class="tech-logo-card flex items-center gap-4 border rounded-xl px-6 py-3.5 shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 group"
-            >
-              <img :src="tech.icon" :alt="tech.name" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-              <div>
-                <p class="text-sm font-heading font-semibold text-on-surface whitespace-nowrap">{{ tech.name }}</p>
-                <p class="text-[10px] text-primary font-bold">{{ tech.level }}%</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MARQUEE ROW 2: Backend & Tools (scrolls left) -->
-      <div data-reveal="fade" data-delay="2" class="mb-16 overflow-hidden">
-        <div class="flex whitespace-nowrap" style="animation: marquee-reverse 45s linear infinite;">
-          <div v-for="n in 4" :key="'r2-' + n" class="flex shrink-0 gap-8 pr-8">
-            <div
-              v-for="tech in techsRow2"
-              :key="tech.name + n"
-              class="tech-logo-card flex items-center gap-4 border rounded-xl px-6 py-3.5 shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 group"
-            >
-              <img :src="tech.icon" :alt="tech.name" class="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-              <div>
-                <p class="text-sm font-heading font-semibold text-on-surface whitespace-nowrap">{{ tech.name }}</p>
-                <p class="text-[10px] text-primary font-bold">{{ tech.level }}%</p>
-              </div>
-            </div>
+      <!-- TECH LOGOS GRID -->
+      <div data-reveal="up" data-delay="1" class="mb-16">
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+          <div
+            v-for="tech in [...techsRow1, ...techsRow2]"
+            :key="tech.name"
+            class="tech-logo-card flex items-center gap-3 md:gap-4 border rounded-xl px-4 py-3 md:px-6 md:py-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 group bg-surface hover:border-primary/30"
+          >
+            <img :src="tech.icon" :alt="tech.name" class="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300" />
+            <p class="text-xs md:text-sm font-heading font-semibold text-on-surface whitespace-nowrap">{{ tech.name }}</p>
           </div>
         </div>
       </div>
