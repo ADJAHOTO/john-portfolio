@@ -2,6 +2,13 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
+import ktalentImage from '../assets/Projects/talent.png'
+import osonsImage from '../assets/Projects/osons.png'
+import shopverseImage from '../assets/Projects/shopverse.png'
+import taskflowImage from '../assets/Projects/taskflow.png'
+import beningastroImage from '../assets/Projects/beningastro.png'
+import linguaiaImage from '../assets/Projects/linguaai.png'
+
 
 const router = useRouter()
 const { lang, t } = useI18n()
@@ -15,8 +22,8 @@ const allProjects = computed(() => [
     title: 'K-Talent',
     category: t.value.projects.items.ktalent.category,
     description: t.value.projects.items.ktalent.description,
-    tags: ['Vue.js', 'Pinia', 'FastAPI', 'PostgreSQL', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop',
+    tags: ['Vue.js', 'Pinia', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Docker'],
+    image: ktalentImage,
     featured: true,
     link: '#',
   },
@@ -24,74 +31,48 @@ const allProjects = computed(() => [
     title: 'Osons',
     category: t.value.projects.items.osons.category,
     description: t.value.projects.items.osons.description,
-    tags: ['Vue.js', 'Pinia', 'FastAPI', 'PostgreSQL', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop',
+    tags: ['Vue.js', 'Pinia', 'FastAPI', 'Tailwind CSS', 'PostgreSQL', 'Docker'],
+    image: osonsImage,
     featured: false,
-    link: '#',
+    link: 'https://osonsbenin.org/',
+  },
+  {
+    title: 'ShopVerse',
+    category: t.value.projects.items.shopverse.category,
+    description: t.value.projects.items.shopverse.description,
+    tags: ['Vue.js', 'Pinia', 'FastAPI', 'Tailwind CSS', 'PostgreSQL', 'Docker'],
+    image: shopverseImage,
+    featured: true,
+    link: 'https://benadjahoto-shop-modern.vercel.app/',
   },
   {
     title: 'LinguaIA',
     category: t.value.projects.items.linguaia.category,
     description: t.value.projects.items.linguaia.description,
-    tags: ['Next.js', 'Firebase', 'OpenAI'],
-    image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop',
+    tags: ['Next.js', 'Firebase', 'Tailwindcss', 'TypeScript', 'OpenAI'],
+    image: linguaiaImage,
     featured: false,
     link: '#',
   },
+  
   {
-    title: 'E-Shopify',
-    category: t.value.projects.items.eshopify.category,
-    description: t.value.projects.items.eshopify.description,
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
-    featured: true,
-    link: '#',
-  },
-  {
-    title: 'CryptoTracker',
-    category: t.value.projects.items.cryptotracker.category,
-    description: t.value.projects.items.cryptotracker.description,
+    title: 'TaskFlow',
+    category: t.value.projects.items.taskflow.category,
+    description: t.value.projects.items.taskflow.description,
     tags: ['Vue.js', 'Tailwind', 'CoinGecko API'],
-    image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=2069&auto=format&fit=crop',
+    image: taskflowImage,
     featured: false,
-    link: '#',
+    link: 'https://taskflow-peach-alpha.vercel.app/',
   },
   {
-    title: 'TravelDiary',
-    category: t.value.projects.items.traveldiary.category,
-    description: t.value.projects.items.traveldiary.description,
-    tags: ['Nuxt 3', 'Supabase', 'Leaflet'],
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=2035&auto=format&fit=crop',
+    title: 'BeninGastro',
+    category: t.value.projects.items.beningastro.category,
+    description: t.value.projects.items.beningastro.description,
+    tags: ['Vue.js', 'Tailwind', 'CoinGecko API'],
+    image: beningastroImage,
     featured: false,
-    link: '#',
+    link: 'https://beningastro.netlify.app/',
   },
-  {
-    title: 'FitApp',
-    category: t.value.projects.items.fitapp.category,
-    description: t.value.projects.items.fitapp.description,
-    tags: ['React Native', 'Firebase', 'Redux'],
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop',
-    featured: false,
-    link: '#',
-  },
-  {
-    title: 'AgencySite',
-    category: t.value.projects.items.agencysite.category,
-    description: t.value.projects.items.agencysite.description,
-    tags: ['Astro', 'Tailwind', 'GSAP'],
-    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop',
-    featured: false,
-    link: '#',
-  },
-  {
-    title: 'SmartHome Auth',
-    category: t.value.projects.items.smarthome.category,
-    description: t.value.projects.items.smarthome.description,
-    tags: ['Vue.js', 'FastAPI', 'WebSockets'],
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop',
-    featured: true,
-    link: '#',
-  }
 ])
 </script>
 

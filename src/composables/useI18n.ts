@@ -59,40 +59,24 @@ const translations: Record<string, any> = {
           description:
             "Application fullstack complète developpé en Vue.js et FastAPI, Pinia, et Gestion des API avec publication, creation d'evenements  gestion des evenements, et gestion des rôles des utilisateurs.",
         },
-        linguaia: {
-          category: 'Plateforme d\'apprentissage de l\'anglais',
+        shopverse: {
+          category: 'Plateforme E-commerce',
           description:
-            "Plateforme interactive d'apprentissage de l'anglais propulsée par l'intelligence artificielle avec feedback instantané.",
+            "Site web personnel présentant une plateforme d'achat de divers articles de haute gamme et de tout gout..",
         },
         taskflow: {
           category: 'Gestion de Tâches',
           description:
             'Application fullstack complète avec gestion de tâches, historique et système multi-utilisateurs.',
         },
-        eshopify: {
-          category: 'E-Commerce',
-          description: 'Boutique en ligne moderne avec paiement Stripe et panier persistant.',
+        beningastro: {
+          category: 'Restaurant',
+          description: 'Site web pour un restaurant avec menu et réservation en ligne.',
         },
-        cryptotracker: {
-          category: 'Finance',
-          description: 'Application de suivi de portefeuilles de cryptomonnaies.',
-        },
-        traveldiary: {
-          category: 'Blog',
-          description: 'Réseau social pour voyageurs avec carte interactive.',
-        },
-        fitapp: {
-          category: 'Santé & Sport',
-          description: 'Application de suivi de fitness et générateur de routines sur-mesure.',
-        },
-        agencysite: {
-          category: 'Site Vitrine',
-          description: 'Site internet de haute performance pour une agence digitale créative.',
-        },
-        smarthome: {
-          category: 'IoT / Sécurité',
-          description: 'Dashboard de contrôle pour appareils intelligents avec système d\'authentification.',
-        },
+        linguaia: {
+          category: 'Apprentissage des langues',
+          description: 'Application d\'apprentissage des langues avec IA.',
+        }
       },
     },
     skills: {
@@ -181,7 +165,7 @@ const translations: Record<string, any> = {
     hero: {
       status: 'Available for new projects',
       greeting: 'Jean Bénisse',
-      name: 'Adjahoto',
+      name: 'ADJAHOTO',
       description:
         'Intermediate <span class="text-on-surface font-semibold">Fullstack Developer</span> specialized in Vue.js & FastAPI. I design high-performance and elegant web applications.',
       viewProjects: 'View Projects',
@@ -231,33 +215,18 @@ const translations: Record<string, any> = {
             "Complete fullstack application developed in Vue.js and FastAPI, Pinia, and API management with posting, event creation, event management, and user role management.",
         },
         linguaia: {
-          category: 'Education & AI',
-          description: 'Interactive AI-powered English learning platform with instant feedback.',
+          category: 'AI',
+          description: 'Application for translation in real time with AI.',
         },
-        eshopify: {
+        shopverse: {
           category: 'E-Commerce',
           description: 'Modern online store with Stripe payment and persistent cart.',
         },
-        cryptotracker: {
-          category: 'Finance',
-          description: 'Cryptocurrency portfolio tracker application.',
+        beningastro: {
+          category: 'Restaurant',
+          description: 'Modern online store with Stripe payment and persistent cart.',
         },
-        traveldiary: {
-          category: 'Blog',
-          description: 'Social network for travelers with interactive map.',
-        },
-        fitapp: {
-          category: 'Health & Fitness',
-          description: 'Fitness tracking application and custom routine generator.',
-        },
-        agencysite: {
-          category: 'Showcase Website',
-          description: 'High-performance website for a creative digital agency.',
-        },
-        smarthome: {
-          category: 'IoT / Security',
-          description: 'Control dashboard for smart devices with authentication system.',
-        },
+
       },
     },
     skills: {

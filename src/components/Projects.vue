@@ -4,6 +4,10 @@ import { useRouter } from 'vue-router'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useI18n } from '../composables/useI18n'
 import { useLoader } from '../composables/useLoader'
+import osonsImage from '../assets/Projects/osons.png'
+import ktalentImage from '../assets/Projects/talent.png'
+import shopverseImage from '../assets/Projects/shopverse.png'
+
 
 const sectionRef = ref<HTMLElement | null>(null)
 useScrollReveal(sectionRef)
@@ -26,8 +30,8 @@ const projects = computed(() => [
     title: 'K-Talent',
     category: t.value.projects.items.ktalent.category,
     description: t.value.projects.items.ktalent.description,
-    tags: ['Vue.js', 'Pinia', 'FastAPI', 'PostgreSQL', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop',
+    tags: ['Vue.js', 'Pinia', 'FastAPI', 'Tailwind CSS', 'TypeScript', 'PostgreSQL', 'Docker'],
+    image: ktalentImage,
     featured: true,
     link: '#',
   },
@@ -35,19 +39,19 @@ const projects = computed(() => [
     title: 'Osons',
     category: t.value.projects.items.osons.category,
     description: t.value.projects.items.osons.description,
-    tags: ['Vue.js', 'Pinia', 'FastAPI', 'PostgreSQL', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop',
+    tags: ['Vue.js', 'Pinia', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Docker'],
+    image: osonsImage,
     featured: false,
-    link: '#',
+    link: 'https://osonsbenin.org/',
   },
   {
-    title: 'LinguaIA',
-    category: t.value.projects.items.linguaia.category,
-    description: t.value.projects.items.linguaia.description,
-    tags: ['Next.js', 'Firebase', 'OpenAI'],
-    image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop',
+    title: 'ShopVerse',
+    category: t.value.projects.items.shopverse.category,
+    description: t.value.projects.items.shopverse.description,
+    tags: ['Next.js', 'Tailwind CSS', 'TypeScript, framer-motion'],
+    image: shopverseImage,
     featured: false,
-    link: '#',
+    link: 'https://benadjahoto-shop-modern.vercel.app/',
   },
 ])
 </script>
