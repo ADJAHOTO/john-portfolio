@@ -8,7 +8,6 @@ import osonsImage from '../assets/Projects/osons.png'
 import ktalentImage from '../assets/Projects/talent.png'
 import shopverseImage from '../assets/Projects/shopverse.png'
 
-
 const sectionRef = ref<HTMLElement | null>(null)
 useScrollReveal(sectionRef)
 const { t } = useI18n()
@@ -19,7 +18,6 @@ const navigateToAllProjects = () => {
   showLoader()
   setTimeout(() => {
     router.push('/projects').then(() => {
-      // Add a slight delay before removing the loader to let the router transition finish
       setTimeout(hideLoader, 300)
     })
   }, 1200)
@@ -57,9 +55,17 @@ const projects = computed(() => [
 </script>
 
 <template>
-  <section ref="sectionRef" id="projets" class="py-24 px-6 lg:px-12 bg-surface">
-    <div class="max-w-[1536px] mx-auto w-full">
-      <div class="flex flex-col gap-6 mb-16">
+  <section ref="sectionRef" id="projets" class="py-24 px-6 lg:px-12 bg-surface relative overflow-hidden">
+
+    <!-- Background decoration -->
+    <div class="absolute bottom-0 left-0 w-96 h-96 pointer-events-none"
+         style="background: radial-gradient(ellipse at bottom left, rgba(227,27,35,0.05), transparent 70%); border-radius: 50%;">
+    </div>
+
+    <div class="max-w-[1536px] mx-auto w-full relative z-10">
+
+      <!-- Header -->
+      <div class="flex flex-col gap-4 mb-16">
         <div data-reveal="up">
           <span class="text-primary text-sm font-semibold uppercase tracking-wider">{{ t.projects.title }}</span>
           <h2 class="font-heading font-bold text-4xl md:text-5xl mt-2 text-on-surface">{{ t.projects.subtitle }}</h2>
@@ -67,6 +73,7 @@ const projects = computed(() => [
         <p data-reveal="up" data-delay="2" class="text-on-muted max-w-2xl text-base leading-relaxed">{{ t.projects.description }}</p>
       </div>
 
+      <!-- Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <a
           v-for="(project, i) in projects"
@@ -75,36 +82,87 @@ const projects = computed(() => [
           target="_blank"
           data-reveal="up"
           :data-delay="i + 1"
-          class="group card-bg border rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 block cursor-pointer"
+          class="project-card group card-bg card-shimmer border rounded-2xl overflow-hidden block cursor-pointer"
         >
+          <!-- Image zone -->
           <div class="aspect-video overflow-hidden relative">
-            <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-            <span v-if="project.featured" class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
+            <img
+              :src="project.image"
+              :alt="project.title"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <!-- Featured badge -->
+            <span
+              v-if="project.featured"
+              class="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg"
+            >
               {{ t.projects.status }}
             </span>
-          </div>
-          <div class="p-6">
-            <span class="text-primary text-xs font-semibold uppercase tracking-wider">{{ project.category }}</span>
-            <h3 class="font-heading font-bold text-2xl text-on-surface mt-2 mb-3 group-hover:text-primary transition-colors duration-300">{{ project.title }}</h3>
-            <p class="text-sm text-on-muted leading-relaxed mb-5">{{ project.description }}</p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span v-for="tag in project.tags" :key="tag" class="text-[11px] font-medium tag-bg px-3 py-1 rounded-full">{{ tag }}</span>
+
+            <!-- Arrow reveal on hover -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400">
+              <div class="w-11 h-11 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-lg border border-white/30 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                ↗
+              </div>
             </div>
           </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <span class="text-primary text-xs font-semibold uppercase tracking-wider">{{ project.category }}</span>
+            <h3 class="font-heading font-bold text-2xl text-on-surface mt-2 mb-3 group-hover:text-primary transition-colors duration-300">
+              {{ project.title }}
+            </h3>
+            <p class="text-sm text-on-muted leading-relaxed mb-5 line-clamp-2">{{ project.description }}</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span
+                v-for="tag in project.tags"
+                :key="tag"
+                class="text-[11px] font-medium tag-bg px-3 py-1 rounded-full"
+              >{{ tag }}</span>
+            </div>
+          </div>
+
+          <!-- Underline accent -->
+          <div class="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-primary to-primary/20 transition-all duration-500 ease-out"></div>
         </a>
       </div>
 
-      <!-- Button Voir tous mes projets -->
-      <div class="mt-16 flex justify-center" data-reveal="up" data-delay="3">
+      <!-- CTA -->
+      <div class="mt-16 flex justify-center" data-reveal="up" data-delay="4">
         <button
           @click="navigateToAllProjects"
-          class="group btn-outline-theme border font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center gap-3"
+          class="cta-btn group relative btn-outline-theme border font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 flex items-center gap-3 overflow-hidden"
         >
-          <span>{{ t.projects.seeAll }}</span>
-          <span class="group-hover:translate-x-1 transition-transform">→</span>
+          <!-- Glow bg on hover -->
+          <span class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-full"></span>
+          <span class="relative">{{ t.projects.seeAll }}</span>
+          <span class="relative group-hover:translate-x-2 transition-transform duration-300 text-primary">→</span>
         </button>
       </div>
+
     </div>
   </section>
 </template>
+
+<style scoped>
+.project-card {
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.45s ease,
+              border-color 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 24px 48px rgba(227,27,35,0.1), 0 8px 24px rgba(0,0,0,0.12);
+  border-color: rgba(227,27,35,0.2);
+}
+
+.cta-btn {
+  box-shadow: 0 0 0 1px rgba(227,27,35,0.1);
+}
+.cta-btn:hover {
+  box-shadow: 0 8px 24px rgba(227,27,35,0.15), 0 0 0 1px rgba(227,27,35,0.2);
+}
+</style>
