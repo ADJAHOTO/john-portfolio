@@ -24,8 +24,8 @@ const allProjects = computed(() => [
     description: t.value.projects.items.ktalent.description,
     tags: ['Vue.js', 'Pinia', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Docker'],
     image: ktalentImage,
-    featured: true,
-    link: '#',
+    featured: false,
+    link: 'https://talent.kapitalhc.com',
   },
   {
     title: 'Osons',
