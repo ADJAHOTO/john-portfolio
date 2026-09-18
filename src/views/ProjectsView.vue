@@ -23,7 +23,7 @@ const allProjects = computed(() => [
     description: t.value.projects.items.ktalent.description,
     tags: ['Vue.js', 'Pinia', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Docker'],
     image: ktalentImage,
-    featured: false,
+    featured: true,
     link: 'https://talent.kapitalhc.com',
   },
   {
@@ -41,7 +41,7 @@ const allProjects = computed(() => [
     description: t.value.projects.items.shopverse.description,
     tags: ['Vue.js', 'Pinia', 'FastAPI', 'Tailwind CSS', 'PostgreSQL', 'Docker'],
     image: shopverseImage,
-    featured: true,
+    featured: false,
     link: 'https://benadjahoto-shop-modern.vercel.app/',
   },
   {
@@ -149,7 +149,10 @@ onMounted(() => {
           :href="project.link"
           target="_blank"
           class="project-card group card-bg card-shimmer border rounded-2xl overflow-hidden block cursor-pointer"
-          :class="pageReady ? 'animate-cardEntrance' : 'opacity-0'"
+          :class="[
+            pageReady ? 'animate-cardEntrance' : 'opacity-0',
+            project.featured ? 'border-primary shadow-[0_0_20px_rgba(227,27,35,0.3)]' : ''
+          ]"
           :style="`animation-delay: ${0.3 + i * 0.1}s;`"
         >
           <!-- Image avec overlay premium -->

@@ -83,6 +83,7 @@ const projects = computed(() => [
           data-reveal="up"
           :data-delay="i + 1"
           class="project-card group card-bg card-shimmer border rounded-2xl overflow-hidden block cursor-pointer"
+          :class="project.featured ? 'border-primary shadow-[0_0_20px_rgba(227,27,35,0.3)]' : ''"
         >
           <!-- Image zone -->
           <div class="aspect-video overflow-hidden relative">
